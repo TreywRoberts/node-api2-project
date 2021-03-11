@@ -1,6 +1,7 @@
 // require your server and launch it here
 const server = require('./api/server')
 
-server.listen(3000, ()=>{
-    console.log('listening on port 3000')
+const PORT = process.env.PORT || 4000
+server.listen(PORT, ()=>{
+    console.log(`listing on ${PORT}`)
 })
