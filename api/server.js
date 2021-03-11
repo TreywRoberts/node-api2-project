@@ -7,5 +7,9 @@ const postRouter = require('./posts/posts-router.js')
 const server = express();
 server.use(express.json())
 server.use('/api/posts', postRouter)
+if (process.env.NODE_ENV === 'development') {
+    const cors = require('cors')
+    server.use(cors())
+}
 
 module.exports = server;
